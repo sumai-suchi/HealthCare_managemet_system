@@ -3,7 +3,10 @@ import { Role } from "../../../generated/prisma/enums";
 import { auth } from "../../middleware/checkAuth";
 import { validateRequest } from "../../middleware/validateRequest";
 import { AppointmentController } from "./appointment.controller";
-import { BookAppointmentValidationZodSchema, UpdateAppointmentStatusValidationZodSchema } from "./appointment.validation";
+import {
+	BookAppointmentValidationZodSchema,
+	UpdateAppointmentStatusValidationZodSchema,
+} from "./appointment.validation";
 
 const router = Router();
 
@@ -60,6 +63,5 @@ router.get(
 	auth(Role.PATIENT, Role.DOCTOR, Role.ADMIN, Role.SUPER_ADMIN),
 	AppointmentController.getSingleAppointment,
 );
-
 
 export const AppointementRoutes = router;

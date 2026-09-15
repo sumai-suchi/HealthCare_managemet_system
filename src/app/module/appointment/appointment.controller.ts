@@ -142,7 +142,6 @@ const getSingleAppointment = catchAsync(async (req: Request, res: Response) => {
 	});
 });
 
-
 export const AppointmentController = {
 	bookAppointment,
 	payAppointment,
